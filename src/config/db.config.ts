@@ -10,7 +10,7 @@ interface dbConfigOption {
 export const dbConfig = registerAs<dbConfigOption>(
 	'db',
 	(): dbConfigOption => ({
-		database: process.env.DB ?? 'postgresql',
+		database: process.env.DB ?? 'test',
 		user: process.env.DB_USER ?? 'postgres',
 		host: process.env.DB_HOST ?? 'localhost',
 		port: process.env.DB_PORT ? parseInt(process.env.DB_PORT, 10) : 5432,

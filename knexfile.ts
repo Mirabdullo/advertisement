@@ -1,15 +1,14 @@
 import type { Knex } from 'knex'
 
-// Update with your config settings.
-
 const knexConfig: { [key: string]: Knex.Config } = {
 	development: {
-		client: 'pg',
+		client: 'postgresql',
 		connection: {
-			database: 'postgres',
-			user: 'postgres',
 			host: 'localhost',
 			port: 5432,
+			user: 'postgres',
+			password: 'salom',
+			database: 'knex',
 		},
 		pool: {
 			max: 10,
@@ -17,11 +16,13 @@ const knexConfig: { [key: string]: Knex.Config } = {
 		},
 		migrations: {
 			tableName: 'migrations',
+			directory: './src/migrations',
 		},
+		searchPath: ['knex', 'public'],
 	},
 
 	staging: {
-		client: 'postgresql',
+		client: 'pg',
 		connection: {
 			database: 'my_db',
 			user: 'username',
