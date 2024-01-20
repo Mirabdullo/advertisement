@@ -8,7 +8,7 @@ const knexConfig: { [key: string]: Knex.Config } = {
 			port: 5432,
 			user: 'postgres',
 			password: 'salom',
-			database: 'knex',
+			database: 'adverticement',
 		},
 		pool: {
 			max: 10,
